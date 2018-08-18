@@ -1,6 +1,6 @@
 package io.github.pleuvoir.controller;
 
-public class NoMardController {
+public class NoMarkController {
 
 
 }
