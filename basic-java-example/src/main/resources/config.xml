@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+	<mode>debug</mode>
+
+	<!-- 缓存 -->
+	<cache>
+		<!-- 是否开启本地持久化 -->
+		<persist>true</persist>
+		<!-- 持久化文件位置 -->
+		<location>d:/cache</location>
+	</cache>
+
+	<datasources>
+		<datasource>
+			<name>oracle</name>
+			<driverclass>oracle.jdbc.driver.OracleDriver</driverclass>
+		</datasource>
+
+		<datasource>
+			<name>mysql</name>
+			<driverclass>com.mysql.jdbc.Driver</driverclass>
+		</datasource>
+	</datasources>
+	
+</config>
