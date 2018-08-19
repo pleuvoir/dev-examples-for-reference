@@ -1,43 +1,34 @@
 package io.github.pleuvoir.controller;
 
-import java.lang.reflect.Method;
-import java.util.Set;
-import org.reflections.Reflections;
-import io.github.pleuvoir.annotation.Controller;
-import io.github.pleuvoir.annotation.RequestMapping;
+import java.util.Enumeration;
+import javax.servlet.http.HttpServletRequest;
+import io.github.pleuvoir.payload.annotation.Controller;
+import io.github.pleuvoir.payload.annotation.ReponseBody;
+import io.github.pleuvoir.payload.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(value = "github")
 public class HelloWorldController {
 
 	@RequestMapping(value = "/username")
-	public void username(){
-		
+	public void username() {
+		System.out.println("进来了，username：pleuvoir");
 	}
-	
-	
+
 	@RequestMapping(value = "/password")
-	public void password(){
+	public @ReponseBody String password(HttpServletRequest req) {
 		
-	}
-	
-	
-	// https://blog.csdn.net/hfreeman2008/article/details/49027247
-	public static void main(String[] args) {
-		Reflections reflections = new Reflections("io.github.pleuvoir.controller");
-		
-		
-	//	Set<Class<?>> typesAnnotatedWith = reflections.getTypesAnnotatedWith(Controller.class);
-		
-		Set<Method> methodsAnnotatedWith = reflections.getMethodsAnnotatedWith(RequestMapping.class);
-		for (Method method : methodsAnnotatedWith) {
-			System.out.println(method.getName());
+		StringBuffer sb = new StringBuffer("?");
+		Enumeration<String> parameterNames = req.getParameterNames();
+		while (parameterNames.hasMoreElements()) {
+			String paramName = (String) parameterNames.nextElement();
+			sb.append("&").append(paramName).append("=").append(req.getParameter(paramName));
+		}
+		if (sb.length() > 1) {
+			sb.deleteCharAt(sb.indexOf("&"));
 		}
 		
-//		for (Class<?> class1 : typesAnnotatedWith) {
-//			
-//			System.out.println(class1.getName());
-//		}
-		
+		return "password：神奇的密码 " + sb.toString();
 	}
+
 }

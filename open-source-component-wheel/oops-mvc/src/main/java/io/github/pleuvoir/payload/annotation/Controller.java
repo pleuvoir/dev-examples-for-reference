@@ -1,4 +1,4 @@
-package io.github.pleuvoir.annotation;
+package io.github.pleuvoir.payload.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
