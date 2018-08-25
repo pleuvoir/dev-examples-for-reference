@@ -11,6 +11,7 @@ import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import io.github.pleuvoir.kit.RabbitConst;
 
 @Component
@@ -22,37 +23,56 @@ public class RabbitQueueCreator {
 
 	@PostConstruct
 	public void init(){
-		createLiveBeginQueue();
+		// 创建延迟队列
+		createBeginDelayQueueGroup();
+		// 创建普通队列
+		createNormalQueue();
 	}
 
+	
 	/**
-	 * 创建专场开始队列，到达开始时间的专场队列
+	 * 创建普通队列
 	 */
-	private void createLiveBeginQueue(){
+	private void createNormalQueue() {
+		Exchange exchangeNormal = ExchangeBuilder.directExchange(RabbitConst.Normal.EXCHANGE).durable(true).build();
+		Queue 	queueNormal 	= QueueBuilder.durable(RabbitConst.Normal.QUEUE).build();
+		Binding bindingNormal 	= BindingBuilder.bind(queueNormal).to(exchangeNormal).with(RabbitConst.Normal.ROUTING_KEY).noargs();
+		rabbitAdmin.declareExchange(exchangeNormal);
+		rabbitAdmin.declareQueue(queueNormal);
+		rabbitAdmin.declareBinding(bindingNormal);
+	}
+	
+	
+	/**
+	 * <p> 创建开始队列，到达开始时间的队列 
+	 * <p> 到达开始时间的队列 作为 开始队列 的死信队列， 当开始队列的每个消息到达过期时间时会被投递到死信队列，消费者消费死信队列即可
+	 */
+	private void createBeginDelayQueueGroup(){
 
-		//定义到达开始时间的专场exchange、queue、routing key，并绑定
-		Exchange exchangeLiveBeginExpire = ExchangeBuilder.directExchange(RabbitConst.LiveBeginExpire.EXCHANGE).durable(true).build();
-		rabbitAdmin.declareExchange(exchangeLiveBeginExpire);
+		//定义exchange、queue、routing key，并绑定，同时设置队列的死信
+		Exchange exchangeBegin = ExchangeBuilder.directExchange(RabbitConst.Begin.EXCHANGE).durable(true).build();
+		rabbitAdmin.declareExchange(exchangeBegin);
 		
-		Queue queueLiveBeginExpire = QueueBuilder.durable(RabbitConst.LiveBeginExpire.QUEUE).build();
-		rabbitAdmin.declareQueue(queueLiveBeginExpire);
-		
-		Binding bindingLiveBeginExpire = BindingBuilder.bind(queueLiveBeginExpire).to(exchangeLiveBeginExpire)
-				.with(RabbitConst.LiveBeginExpire.ROUTING_KEY).noargs();
-		rabbitAdmin.declareBinding(bindingLiveBeginExpire);
-
-		//定义专场exchange、queue、routing key，并绑定，同时设置队列的死信
-		Exchange exchangeLiveBegin = ExchangeBuilder.directExchange(RabbitConst.LiveBegin.EXCHANGE).durable(true).build();
-		rabbitAdmin.declareExchange(exchangeLiveBegin);
-		
-		Queue queueLiveBegin = QueueBuilder.durable(RabbitConst.LiveBegin.QUEUE)
-				.withArgument("x-dead-letter-exchange", RabbitConst.LiveBeginExpire.EXCHANGE)
-				.withArgument("x-dead-letter-routing-key", RabbitConst.LiveBeginExpire.ROUTING_KEY)
+		Queue queueBegin = QueueBuilder.durable(RabbitConst.Begin.QUEUE)
+				.withArgument("x-dead-letter-exchange", RabbitConst.BeginArrival.EXCHANGE)
+				.withArgument("x-dead-letter-routing-key", RabbitConst.BeginArrival.ROUTING_KEY)
 				.build();
-		rabbitAdmin.declareQueue(queueLiveBegin);
+		rabbitAdmin.declareQueue(queueBegin);
 		
-		Binding bindingOrder = BindingBuilder.bind(queueLiveBegin).to(exchangeLiveBegin).with(RabbitConst.LiveBegin.ROUTING_KEY).noargs();
+		Binding bindingOrder = BindingBuilder.bind(queueBegin).to(exchangeBegin).with(RabbitConst.Begin.ROUTING_KEY).noargs();
 		rabbitAdmin.declareBinding(bindingOrder);
+		
+		//定义到达开始时间的队列exchange、queue、routing key，并绑定
+		Exchange exchangeBeginArrival = ExchangeBuilder.directExchange(RabbitConst.BeginArrival.EXCHANGE).durable(true).build();
+		rabbitAdmin.declareExchange(exchangeBeginArrival);
+		
+		Queue queueBeginArrival = QueueBuilder.durable(RabbitConst.BeginArrival.QUEUE).build();
+		rabbitAdmin.declareQueue(queueBeginArrival);
+		
+		Binding bindingBeginArrival = BindingBuilder.bind(queueBeginArrival).to(exchangeBeginArrival)
+				.with(RabbitConst.BeginArrival.ROUTING_KEY).noargs();
+		rabbitAdmin.declareBinding(bindingBeginArrival);
+
 	}
 	
 

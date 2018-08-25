@@ -2,24 +2,34 @@ package io.github.pleuvoir.kit;
 
 public class RabbitConst {
 
-	/** 专场开始 */
-	public static class LiveBegin{
+	/** 开始 */
+	public static class Begin {
 
-		public static final String EXCHANGE = "auction.x.liveBegin";
+		public static final String EXCHANGE 	= "x.begin";
 
-		public static final String QUEUE = "auction.q.liveBegin";
+		public static final String QUEUE 		= "q.begin";
 
-		public static final String ROUTING_KEY = "r.live.begin";
+		public static final String ROUTING_KEY 	= "r.begin";
 	}
 
-	/** 到达专场开始时间 */
-	public static class LiveBeginExpire{
+	/** 到达开始时间 （死信队列）*/
+	public static class BeginArrival {
 
-		public static final String EXCHANGE = "auction.x.liveBeginExpire";
+		public static final String EXCHANGE 	= "x.beginArrival";
 
-		public static final String QUEUE = "auction.q.liveBeginExpire";
+		public static final String QUEUE 		= "q.beginArrival";
 
-		public static final String ROUTING_KEY = "r.live.beginExpire";
+		public static final String ROUTING_KEY 	= "r.beginArrival";
 	}
 
+	
+	public static class Normal {
+
+		public static final String EXCHANGE 	= "x.normal";
+
+		public static final String QUEUE 		= "q.normal";
+
+		public static final String ROUTING_KEY 	= "r.normal";
+	}
+	
 }
