@@ -1,8 +1,8 @@
 
 
-### 下载与安装
+## 下载与安装
 
-#### windows 
+### windows 
 
 [Installing on Windows](https://www.rabbitmq.com/install-windows.html)
 
