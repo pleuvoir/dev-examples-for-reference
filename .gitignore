@@ -24,3 +24,6 @@ hs_err_pid*
 open-source-component-wheel/oops-mvc/.classpath
 open-source-component-wheel/oops-mvc/.project
 open-source-component-wheel/oops-mvc/.springBeans
+basic-java-example/.classpath
+basic-java-example/.gitignore
+basic-java-example/.project
