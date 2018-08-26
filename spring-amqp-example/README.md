@@ -11,9 +11,9 @@
 安装好后，进入 rabbitMQ 安装目录下的 sbin 目录，在目录下 shift+右键 打开命令行
 （C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.7\sbin）
 
-使用 `rabbitmq-plugins.bat enable rabbitmq_management` 开启网页管理界面,然后重启 rabbitMQ 
+使用 `rabbitmq-plugins.bat enable rabbitmq_management` 开启网页管理界面，然后重启 rabbitMQ 
 
-在浏览器中输入 http://localhost:15672 成功开启web后台管理界面,输入用户名和密码（默认为guest）
+在浏览器中输入 http://localhost:15672 成功开启web后台管理界面，输入用户名和密码（默认为guest）
 
 配置文件位于 `C:\Users\pleuvoir\AppData\Roaming\RabbitMQ`
 
