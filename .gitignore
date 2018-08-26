@@ -27,3 +27,6 @@ open-source-component-wheel/oops-mvc/.springBeans
 basic-java-example/.classpath
 basic-java-example/.gitignore
 basic-java-example/.project
+muti-thread-java-example/.classpath
+muti-thread-java-example/.gitignore
+muti-thread-java-example/.project
