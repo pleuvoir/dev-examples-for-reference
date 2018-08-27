@@ -24,3 +24,9 @@ hs_err_pid*
 open-source-component-wheel/oops-mvc/.classpath
 open-source-component-wheel/oops-mvc/.project
 open-source-component-wheel/oops-mvc/.springBeans
+spring-scheduler-example/.classpath
+spring-scheduler-example/.gitignore
+spring-scheduler-example/.project
+spring-scheduler-example/.settings/org.eclipse.core.resources.prefs
+spring-scheduler-example/.settings/org.eclipse.jdt.core.prefs
+spring-scheduler-example/.settings/org.eclipse.m2e.core.prefs
