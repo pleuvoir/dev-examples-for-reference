@@ -37,3 +37,9 @@ muti-thread-java-example/.classpath
 muti-thread-java-example/.gitignore
 muti-thread-java-example/.project
 
+basic-java-example/.settings/org.eclipse.core.resources.prefs
+basic-java-example/.settings/org.eclipse.jdt.core.prefs
+basic-java-example/.settings/org.eclipse.m2e.core.prefs
+muti-thread-java-example/.settings/org.eclipse.core.resources.prefs
+muti-thread-java-example/.settings/org.eclipse.jdt.core.prefs
+muti-thread-java-example/.settings/org.eclipse.m2e.core.prefs
