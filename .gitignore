@@ -30,3 +30,10 @@ spring-scheduler-example/.project
 spring-scheduler-example/.settings/org.eclipse.core.resources.prefs
 spring-scheduler-example/.settings/org.eclipse.jdt.core.prefs
 spring-scheduler-example/.settings/org.eclipse.m2e.core.prefs
+basic-java-example/.classpath
+basic-java-example/.gitignore
+basic-java-example/.project
+muti-thread-java-example/.classpath
+muti-thread-java-example/.gitignore
+muti-thread-java-example/.project
+

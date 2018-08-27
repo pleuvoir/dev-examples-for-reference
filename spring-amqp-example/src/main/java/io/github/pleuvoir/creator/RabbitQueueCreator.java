@@ -44,35 +44,30 @@ public class RabbitQueueCreator {
 	
 	
 	/**
-	 * <p> 创建开始队列，到达开始时间的队列 
-	 * <p> 到达开始时间的队列 作为 开始队列 的死信队列， 当开始队列的每个消息到达过期时间时会被投递到死信队列，消费者消费死信队列即可
+	 * <p> 创建开始队列（该队列无消费者），到达开始时间的队列 
+	 * <p> 到达开始时间的队列 作为 开始队列 的死信队列， 当开始队列的每个消息到达过期时间未被消费时会被投递到死信队列，消费者消费死信队列即可实现延迟消费
 	 */
 	private void createBeginDelayQueueGroup(){
 
-		//定义exchange、queue、routing key，并绑定，同时设置队列的死信
 		Exchange exchangeBegin = ExchangeBuilder.directExchange(RabbitConst.Begin.EXCHANGE).durable(true).build();
-		rabbitAdmin.declareExchange(exchangeBegin);
-		
 		Queue queueBegin = QueueBuilder.durable(RabbitConst.Begin.QUEUE)
 				.withArgument("x-dead-letter-exchange", RabbitConst.BeginArrival.EXCHANGE)
 				.withArgument("x-dead-letter-routing-key", RabbitConst.BeginArrival.ROUTING_KEY)
 				.build();
+		Binding bindingBegin = BindingBuilder.bind(queueBegin).to(exchangeBegin).with(RabbitConst.Begin.ROUTING_KEY).noargs();
+		
+		rabbitAdmin.declareExchange(exchangeBegin);
 		rabbitAdmin.declareQueue(queueBegin);
+		rabbitAdmin.declareBinding(bindingBegin);
 		
-		Binding bindingOrder = BindingBuilder.bind(queueBegin).to(exchangeBegin).with(RabbitConst.Begin.ROUTING_KEY).noargs();
-		rabbitAdmin.declareBinding(bindingOrder);
-		
-		//定义到达开始时间的队列exchange、queue、routing key，并绑定
 		Exchange exchangeBeginArrival = ExchangeBuilder.directExchange(RabbitConst.BeginArrival.EXCHANGE).durable(true).build();
-		rabbitAdmin.declareExchange(exchangeBeginArrival);
-		
 		Queue queueBeginArrival = QueueBuilder.durable(RabbitConst.BeginArrival.QUEUE).build();
-		rabbitAdmin.declareQueue(queueBeginArrival);
+		Binding bindingBeginArrival = BindingBuilder.bind(queueBeginArrival).to(exchangeBeginArrival).with(RabbitConst.BeginArrival.ROUTING_KEY)
+				.noargs();
 		
-		Binding bindingBeginArrival = BindingBuilder.bind(queueBeginArrival).to(exchangeBeginArrival)
-				.with(RabbitConst.BeginArrival.ROUTING_KEY).noargs();
+		rabbitAdmin.declareExchange(exchangeBeginArrival);
+		rabbitAdmin.declareQueue(queueBeginArrival);
 		rabbitAdmin.declareBinding(bindingBeginArrival);
-
 	}
 	
 

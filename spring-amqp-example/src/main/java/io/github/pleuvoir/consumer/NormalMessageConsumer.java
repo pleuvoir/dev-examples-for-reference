@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSON;
 
 import io.github.pleuvoir.kit.RabbitConst;
-import io.github.pleuvoir.model.DelayMessage;
+import io.github.pleuvoir.model.NormalMessage;
 
 
 @RabbitListener(
@@ -31,7 +31,7 @@ public class NormalMessageConsumer {
 	@RabbitHandler
 	public void handler(String data) {
 		
-		logger.info("【普通消息消费者】已接收到消息，payload：{}", JSON.parseObject(data, DelayMessage.class).toJSON());
+		logger.info("【普通消息消费者】已接收到消息，payload：{}", JSON.parseObject(data, NormalMessage.class).toJSON());
 	}
 
 }
