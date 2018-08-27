@@ -11,13 +11,17 @@
 安装好后，进入 rabbitMQ 安装目录下的 sbin 目录，在目录下 shift+右键 打开命令行
 （C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.7\sbin）
 
+#### 插件
+
 使用 `rabbitmq-plugins.bat enable rabbitmq_management` 开启网页管理界面，然后重启 rabbitMQ 
 
 在浏览器中输入 http://localhost:15672 成功开启web后台管理界面，输入用户名和密码（默认为guest）
 
-到此 rabbitMQ 的 window 安装就完成了
+使用 `rabbitmq-plugins enable rabbitmq_web_stomp` 开启 stomp 代理
 
-注意：
+rabbitmq-plugins enable rabbitmq_web_stomp
+
+#### 注意
 
 1. 如果重新安装 必须删除 C:\Users\pleuvoir\AppData\Roaming\RabbitMQ 文件夹，否则无法启动
 2. 配置文件位于 `C:\Users\pleuvoir\AppData\Roaming\RabbitMQ`
