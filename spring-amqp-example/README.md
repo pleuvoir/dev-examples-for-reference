@@ -19,8 +19,6 @@
 
 使用 `rabbitmq-plugins enable rabbitmq_web_stomp` 开启 stomp 代理
 
-rabbitmq-plugins enable rabbitmq_web_stomp
-
 #### 注意
 
 1. 如果重新安装 必须删除 C:\Users\pleuvoir\AppData\Roaming\RabbitMQ 文件夹，否则无法启动
