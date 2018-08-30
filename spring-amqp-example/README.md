@@ -2,9 +2,7 @@
 
 ## 下载与安装
 
-### windows 
-
-[Installing on Windows](https://www.rabbitmq.com/install-windows.html)
+### [Installing on Windows](https://www.rabbitmq.com/install-windows.html)
 
 先安装 Erlang (必须以管理员身份运行)，然后安装 rabbit
 
