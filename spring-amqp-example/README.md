@@ -17,7 +17,7 @@
 
 在浏览器中输入 http://localhost:15672 成功开启web后台管理界面，输入用户名和密码（默认为guest）
 
-使用 `rabbitmq-plugins enable rabbitmq_web_stomp` 开启 stomp 代理
+如果需要做推送可以使用 `rabbitmq-plugins enable rabbitmq_web_stomp` 开启 stomp 代理
 
 #### 注意
 
