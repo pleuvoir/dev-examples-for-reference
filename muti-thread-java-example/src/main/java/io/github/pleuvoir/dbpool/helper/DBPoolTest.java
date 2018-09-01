@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *类说明：
  */
 public class DBPoolTest {
-    static DBPool pool  = new DBPool(10);
+    static DBPool pool  = new DBPool(1);
     // 控制器:控制main线程将会等待所有Woker结束后才能继续执行
     static CountDownLatch end;
 

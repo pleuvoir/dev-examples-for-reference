@@ -8,8 +8,9 @@ import io.github.pleuvoir.kit.SleepUtil;
 
 public class Client {
 	
-	static DBPool dbPool = new DBPool(1);
-	static CountDownLatch countDownLatch = new CountDownLatch(1000);
+	static DBPool dbPool = new DBPool(10);
+	static int count = 1000;
+	static CountDownLatch countDownLatch = new CountDownLatch(count);
 	
 	public static class GetConnectionThread implements Runnable{
 
@@ -42,7 +43,6 @@ public class Client {
 	
 
 	public static void main(String[] args) throws InterruptedException {
-		int count = 1000;
 		
 		for(int i = 0;i<count;i++){
 			new Thread(new GetConnectionThread()).start();

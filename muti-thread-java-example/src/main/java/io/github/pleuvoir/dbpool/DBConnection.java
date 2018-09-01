@@ -19,6 +19,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
+import io.github.pleuvoir.kit.SleepUtil;
+
 public class DBConnection implements java.sql.Connection{
 
 	@Override
@@ -71,7 +73,7 @@ public class DBConnection implements java.sql.Connection{
 
 	@Override
 	public void commit() throws SQLException {
-		
+		SleepUtil.ms(15);;
 	}
 	
 	

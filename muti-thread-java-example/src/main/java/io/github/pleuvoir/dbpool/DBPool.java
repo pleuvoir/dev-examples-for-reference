@@ -22,25 +22,23 @@ public class DBPool {
 					this.wait();
 				}
 				return pool.removeFirst();
-
 			} else {
-				
 				// 超时时间
-				long overtime = System.currentTimeMillis()+timeout;
+				long overtime = System.currentTimeMillis() + timeout;
 				// 倒计时时间
 				long remain = timeout;
-				
+
 				// 当没有资源 且倒计时大于零时一直等待
 				while (remain > 0 && pool.isEmpty()) {
 					// 等待几秒
-					this.wait(remain);
+					pool.wait(remain);
 					// 如果在等待过程中 收到通知 则重新计算剩余等待时间
 					remain = overtime - System.currentTimeMillis();
 				}
 				// 超时了，或者拿到连接了
-				if(!pool.isEmpty()){
+				if (!pool.isEmpty()) {
 					return pool.removeFirst();
-				}else{
+				} else {
 					return null;
 				}
 			}
@@ -50,13 +48,13 @@ public class DBPool {
 	
 	
 	// 释放连接
-	public void releaseConn(Connection conn){
-		if(conn != null){
-			synchronized (pool) {
+	public void releaseConn(Connection conn) {
+		synchronized (pool) {
+			if (conn != null) {
 				pool.addLast(conn);
-			//	System.out.println(this);
-			//	System.out.println(pool);
-				pool.notifyAll();	// 告知所有持有连接池锁对象的线程 可以抢锁了
+				// System.out.println(this);
+				// System.out.println(pool);
+				pool.notifyAll(); // 告知所有持有连接池锁对象的线程 可以抢锁了
 			}
 		}
 	}
