@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-import io.github.pleuvoir.dbpool.helper.SleepTools;
+import io.github.pleuvoir.kit.SleepUtil;
 
 /**
  * 
@@ -30,7 +30,7 @@ public class CyclicBarrierTest {
 		public void run() {
 			try {
 				if(new Random().nextBoolean()){
-					SleepTools.second(3);
+					SleepUtil.seconds(3);
 					System.out.println(this.getName() + " 运气不好，休息 2 秒");
 				}
 				
@@ -38,7 +38,7 @@ public class CyclicBarrierTest {
 				cyclicBarrier.await();
 				
 				System.out.println(this.getName() + "准备休息 3 秒，然后一起出发");
-				SleepTools.second(3);
+				SleepUtil.seconds(3);
 				System.out.println(this.getName() + " 到达位置");
 			} catch (InterruptedException | BrokenBarrierException e) {
 				e.printStackTrace();

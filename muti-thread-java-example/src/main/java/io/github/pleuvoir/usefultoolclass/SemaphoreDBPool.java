@@ -3,12 +3,9 @@ package io.github.pleuvoir.usefultoolclass;
 import java.sql.Connection;
 import java.util.LinkedList;
 import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
-import io.github.pleuvoir.dbpool.Client.GetConnectionThread;
-import io.github.pleuvoir.dbpool.helper.SleepTools;
+import io.github.pleuvoir.kit.SleepUtil;
 
 public class SemaphoreDBPool {
 
@@ -64,7 +61,7 @@ public class SemaphoreDBPool {
 						long start = System.currentTimeMillis();
 						Connection conn = DBPool.getConn();
 						System.out.println("线程："  + Thread.currentThread().getName() + " 拿连接耗时：" + (System.currentTimeMillis() -start) + "ms");
-						SleepTools.second(1 + new Random().nextInt(30));
+						SleepUtil.seconds(1 + new Random().nextInt(30));
 						DBPool.returnConn(conn);
 						System.out.println("归还连接。。。");
 					} catch (InterruptedException e) {
