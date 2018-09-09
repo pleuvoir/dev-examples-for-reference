@@ -78,5 +78,5 @@ boolean putIfExist(String key, Object value);
 <context:component-scan base-package="io.github.pleuvoir">
 ```
 
-#### 如果没有设置配置文件，则会自动尝试连接 127.0.0.1:6379 的redis-server
+#### 如果没有设置配置文件，则会自动尝试连接 127.0.0.1:6379 的 redis-server
 
