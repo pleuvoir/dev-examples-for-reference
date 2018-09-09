@@ -1,4 +1,4 @@
-package io.github.pleuvoir.wait;
+package io.github.pleuvoir.waitnotify;
 
 import io.github.pleuvoir.kit.SleepUtil;
 
