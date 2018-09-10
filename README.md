@@ -1,4 +1,4 @@
-# dev-examples-for-reference
+# reference-samples
 
 * [basic-java-example【java 基础】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)
 
