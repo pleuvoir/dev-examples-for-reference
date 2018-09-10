@@ -18,5 +18,5 @@
 
 * [code-generator【代码生成器，包含 freemarker 大部分语法的使用】](https://github.com/pleuvoir/reference-samples/tree/master/code-generator)
 
-* [resultset-support【通过查询 sql 返回结果集对象】](https://github.com/pleuvoir/reference-samples/tree/master/resultset-support)
+* [resultset-support【通过查询 sql 返回结果集对象，spring-boot 版本】](https://github.com/pleuvoir/reference-samples/tree/master/resultset-support)
 
