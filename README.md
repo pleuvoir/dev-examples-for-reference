@@ -14,7 +14,7 @@
 
 * [spring-amqp-example【rabbitmq 示例，spring-boot 版本】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-amqp-example)
 
-* [spring-scheduler-example【quartz 示例】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)
+* [spring-scheduler-example【quartz 示例，spring-boot 版本】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)
 
 * [code-generator【代码生成器，包含 freemarker 大部分语法的使用】](https://github.com/pleuvoir/reference-samples/tree/master/code-generator)
 
