@@ -18,7 +18,7 @@ public class InterruptThread {
 						TimeUnit.SECONDS.sleep(1);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
-						// 这种情况会把 标志为重新改为 false ，线程又被激活 所以需要再次中断
+						// 出现异常这种情况会把 标志为重新改为 false ，线程又被激活 所以需要再次中断
 						Thread.currentThread().interrupt();
 						
 						// 是否中断状态，注意：此方法会重新将标记为 置为 false
