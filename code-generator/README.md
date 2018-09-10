@@ -1,4 +1,4 @@
-## crud-tool
+## code-generator
 
 ### 项目说明
 字如其名，增删改差工具，其实就是生成代码的工具，通过freemarker做为模版生成一些不想写的代码。:poop: 
