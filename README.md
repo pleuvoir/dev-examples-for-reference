@@ -1,22 +1,26 @@
-# reference-samples
 
-* [basic-java-example【java 基础】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)
 
-* [common-tookit-java【java 工具类】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/common-tookit-java)
+:boom: 该仓库存放平时开发中写的一些例子，以备参考只需。<br>
 
-* [easy-authent【方便的使用 Google Authenticator密码验证】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/easy-authent)
+####   参考示例
+|项目|简介|
+|------:|:-------|
+|[basic-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)|Java 基础|
+|[muti-thread-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/muti-thread-java-example)| Java 多线程|
+|[common-tookit-java](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/common-tookit-java)|Java 工具类|
+|[easy-authent](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/easy-authent)|方便的使用 google authenticator 验证|
+|[easy-redis](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/easy-redis)|方便的使用 redis，支持集群|
+|[open-source-component-wheel](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/open-source-component-wheel)|开源轮子，随时会爆胎|
+|[code-generator](https://github.com/pleuvoir/reference-samples/tree/master/code-generator)|代码生成器，包含 freemarker 大部分语法的使用|
+|[resultset-support](https://github.com/pleuvoir/reference-samples/tree/master/resultset-support)|通过查询 sql 返回结果集对象，spring-boot 版本|
+|[spring-amqp-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-amqp-example)|rabbitmq 示例，spring-boot 版本|
+|[spring-scheduler-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)|quartz 示例，spring-boot 版本|
 
-* [easy-redis【方便的使用 redis】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/easy-redis)
 
-* [muti-thread-java-example【java 多线程示例】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/muti-thread-java-example)
+#### 项目结构
 
-* [open-source-component-wheel【开源轮子】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/open-source-component-wheel)
+如若在本地运行，请确保你的计算机已经安装如下环境
 
-* [spring-amqp-example【rabbitmq 示例，spring-boot 版本】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-amqp-example)
-
-* [spring-scheduler-example【quartz 示例，spring-boot 版本】](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)
-
-* [code-generator【代码生成器，包含 freemarker 大部分语法的使用】](https://github.com/pleuvoir/reference-samples/tree/master/code-generator)
-
-* [resultset-support【通过查询 sql 返回结果集对象，spring-boot 版本】](https://github.com/pleuvoir/reference-samples/tree/master/resultset-support)
-
+- Maven3
+- Java8
+- [lombok](https://projectlombok.org/) 插件
