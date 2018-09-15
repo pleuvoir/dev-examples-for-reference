@@ -1,8 +1,8 @@
 
 
-## :boom: 该仓库存放平时开发中写的一些例子，以便参考只需。
+### :boom: 该仓库存放平时开发中写的一些例子，以便参考只需。
 
-###   参考示例
+####   参考示例
 |项目|简介|
 |------:|:-------|
 |[basic-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)|Java 基础|
@@ -17,7 +17,7 @@
 |[spring-scheduler-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)|quartz 示例，spring-boot 版本|
 
 
-### 项目结构
+#### 项目结构
 
 如若在本地运行，请确保你的计算机已经安装如下环境
 
