@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 public class BaseController {
 
 	@Value("${base.page.package}")
-	String BASE_PAGE_PACKAGE;
+	private String BASE_PAGE_PACKAGE;
 	
 	
 	/**

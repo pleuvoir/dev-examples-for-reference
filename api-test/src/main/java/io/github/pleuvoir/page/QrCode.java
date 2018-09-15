@@ -26,7 +26,7 @@ public class QrCode extends AbstractPageBuildService{
 						Option wechat = new Option("03", "微信");
 						Option alipay = new Option("04", "支付宝");
 						Option jd     = new Option("03", "京东钱包");
-						return new Select(Arrays.asList(wechat,alipay,jd));
+						return new Select(Arrays.asList(wechat, alipay, jd));
 					}
 				}),
 				Column.of("remark").value("我是文本域").placeholder("备注").setTextarea()
