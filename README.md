@@ -10,7 +10,7 @@
 
 * [easy-authent](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/easy-authent)
 
-  方便的使用 Google Authenticator密码验证
+  方便的使用 Google Authenticator 密码验证
 
 * [easy-redis](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/easy-redis)
 
