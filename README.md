@@ -1,8 +1,9 @@
 
 
-:boom: 该仓库存放平时开发中写的一些例子，以备参考只需。<br>
+:sparkles: 该仓库存放平时开发中写的一些例子，以备参考只需。<br>
 
 ####   参考示例
+
 |项目|简介|
 |------:|:-------|
 |[basic-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)|Java 基础|
