@@ -1,4 +1,7 @@
-##  reference-samples
+##  :boom: 参考示例
+
+该仓库保存平时开发中写的一些例子，做为参考之用。
+
 
 * [basic-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)
 
