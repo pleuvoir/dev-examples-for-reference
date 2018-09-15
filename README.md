@@ -1,4 +1,4 @@
-# reference-samples
+##  reference-samples
 
 * [basic-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)
 
@@ -39,4 +39,13 @@
 * [resultset-support](https://github.com/pleuvoir/reference-samples/tree/master/resultset-support)
 
   通过查询 sql 返回结果集对象，spring-boot 版本
+   
+   
+## 项目结构
+
+如若在本地运行，请确保你的计算机已经安装如下环境
+
+- Maven3
+- Java8
+- [lombok](https://projectlombok.org/) 插件
 
