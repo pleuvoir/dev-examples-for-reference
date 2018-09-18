@@ -17,6 +17,7 @@
 |[resultset-support](https://github.com/pleuvoir/reference-samples/tree/master/resultset-support)|通过查询 sql 返回结果集对象，spring-boot 版本|
 |[spring-amqp-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-amqp-example)|rabbitmq 示例，spring-boot 版本|
 |[spring-scheduler-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)|quartz 示例，spring-boot 版本|
+|[spring-annotation-based-example]https://github.com/pleuvoir/reference-samples/tree/master/spring-annotation-based-example)|spring 基础学习|
 
 
 #### 项目结构
