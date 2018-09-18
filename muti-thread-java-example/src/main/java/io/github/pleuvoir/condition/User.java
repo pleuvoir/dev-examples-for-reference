@@ -31,7 +31,7 @@ public class User {
 				nameCond.signalAll(); // 通知所有持有该 Condition 的线程
 				System.out.println("通知所有持有 Name Condition 的线程");
 			} else {
-				nameCond.signal(); // 通知另一个持有该 Condition 的线程
+				nameCond.signal(); // 如果有多个持有该 Condition 线程在等待 则通知其中一个线程
 				System.out.println("通知一个持有 Name Condition 的线程");
 			}
 		} finally {
@@ -47,7 +47,7 @@ public class User {
 				ageCond.signalAll();	// 通知所有持有该 Condition 的线程
 				System.out.println("通知所有持有 Age Condition 的线程");
 			}else{
-				ageCond.signal();	// 通知另一个持有该 Condition 的线程
+				ageCond.signal();	// 如果有多个持有该 Condition 线程在等待 则通知其中一个线程
 				System.out.println("通知一个持有 Age Condition 的线程");
 			}
 		} finally {
