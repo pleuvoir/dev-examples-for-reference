@@ -17,7 +17,7 @@ import io.github.pleuvoir.base.User;
 //@ComponentScan(value = "io.github.pleuvoir.chapter2", includeFilters = {@Filter(type = FilterType.ANNOTATION, classes = { Controller.class }) }, useDefaultFilters = false)
 
 //也可以自己定义一个过滤器类，制定自己的过滤规则（这里的自定义规则：如果类名包含 `user` 则注册）
-@ComponentScan(value = "io.github.pleuvoir.chapter2", includeFilters = {@Filter(type = FilterType.CUSTOM, classes = { CustomTypeFilte.class }) }, useDefaultFilters = false)
+@ComponentScan(value = "io.github.pleuvoir.chapter2", includeFilters = {@Filter(type = FilterType.CUSTOM, classes = { CustomTypeFilter.class }) }, useDefaultFilters = false)
 
 // 会将此包下所有不是被   @Controller 注解标记的类全部注入，注意此时 useDefaultFilters 必须 为 true，否则无效
 //@ComponentScan(value = "io.github.pleuvoir.chapter2", excludeFilters = {@Filter(type = FilterType.ANNOTATION, classes = { Controller.class }) }, useDefaultFilters = true)
