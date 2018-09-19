@@ -11,7 +11,7 @@ import org.springframework.core.type.filter.TypeFilter;
  * @author pleuvoir
  *
  */
-public class CustomTypeFilte implements TypeFilter {
+public class CustomTypeFilter implements TypeFilter {
 
 	/**
 	 * MetadataReader：读取到当前正在扫描类的信息 
