@@ -1,6 +1,6 @@
 
 /**
- * 演示注册 bean 的 4 种方式
+ * 演示注册 bean 的 多种方式
  * @author pleuvoir
  *
  */
