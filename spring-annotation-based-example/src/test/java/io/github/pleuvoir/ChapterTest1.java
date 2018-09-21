@@ -1,4 +1,4 @@
-package io.github.pleuvoir.test;
+package io.github.pleuvoir;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
