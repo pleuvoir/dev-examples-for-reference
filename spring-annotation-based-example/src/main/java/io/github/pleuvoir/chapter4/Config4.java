@@ -10,7 +10,7 @@ import io.github.pleuvoir.chapter4.service.InitService2;
 
 @Configuration
 @Import(InitService2.class)
-@ComponentScan("io.github.pleuvoir.chapter4.service")
+@ComponentScan("io.github.pleuvoir.chapter4")
 public class Config4 {
 
 	@Bean(initMethod = "init", destroyMethod = "destroy")

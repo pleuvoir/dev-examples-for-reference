@@ -18,8 +18,11 @@ public class InitService3 implements InitializingBean, DisposableBean {
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("执行 InitService3 afterPropertiesSet()");
+		System.out.println("执行 InitService3 afterPropertiesSet()，此方法类似于 init");
 	}
 
+	public void unpark(){
+		System.out.println("开车。。。");
+	}
 
 }

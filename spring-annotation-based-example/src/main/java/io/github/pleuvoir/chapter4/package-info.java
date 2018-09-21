@@ -1,6 +1,6 @@
 
 /**
- * bean 的生命周期
+ * bean 的生命周期，可对 bean 做增强处理
  * @author pleuvoir
  *
  */

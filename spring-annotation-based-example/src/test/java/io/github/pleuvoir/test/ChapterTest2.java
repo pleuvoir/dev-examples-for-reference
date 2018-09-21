@@ -1,4 +1,4 @@
-package client;
+package io.github.pleuvoir.test;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
