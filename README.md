@@ -9,7 +9,7 @@
 |[basic-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)|Java 基础|
 |[common-tookit-java](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/common-tookit-java)|Java 工具类|
 |[muti-thread-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/muti-thread-java-example)| Java 多线程|
-|[open-source-component-wheel](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/open-source-component-wheel)|开源轮子，随时会爆胎|
+|component-wheel](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/open-source-component-wheel)|轮子，随时会爆胎|
 |[api-test](https://github.com/pleuvoir/reference-samples/tree/master/api-test)|用于对同一网关下多套环境接口进行测试，spring-boot 版本|
 |[easy-redis](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/easy-redis)|方便的使用 redis，支持集群|
 |[easy-authent](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/easy-authent)|方便的使用 google authenticator 验证|
