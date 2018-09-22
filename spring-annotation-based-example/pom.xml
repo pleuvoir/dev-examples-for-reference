@@ -5,14 +5,24 @@
   <artifactId>spring-annotation-based-example</artifactId>
   <version>20180918</version>
   <packaging>jar</packaging>
-  
-  
-  	<dependencies>
+
+  <properties>
+  		<spring.version>5.0.6.RELEASE</spring.version>
+  </properties>
+
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>5.0.6.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

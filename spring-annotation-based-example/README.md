@@ -57,7 +57,9 @@ bean 的生命周期，可对 bean 做增强处理
 
 `@Qualifier`
 
+## chapter6
 
+演示基于 aspectj 的 aop，五种切入时机
 
 
 
