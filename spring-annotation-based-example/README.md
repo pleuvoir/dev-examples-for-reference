@@ -62,4 +62,13 @@ bean 的生命周期，可对 bean 做增强处理
 演示基于 aspectj 的 aop，五种切入时机
 
 
+## chapter7
+
+演示配置文件读取以及 `Environment` 包装类实现
+
+`@PropertySource` 
+
+`@Value`
+
+
 
