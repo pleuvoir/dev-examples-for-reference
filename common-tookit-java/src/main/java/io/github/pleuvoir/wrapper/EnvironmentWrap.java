@@ -112,8 +112,10 @@ public class EnvironmentWrap implements Environment, EnvironmentAware {
 		return getProperty(key, Boolean.class, defaultValue);
 	}
 	
-	
-	//// ###  default environment interface impl
+
+	//---------------------------------------------------------------------
+	// Implementation of Environment interface
+	//---------------------------------------------------------------------
 	
 	@Override
 	public boolean containsProperty(String key) {
