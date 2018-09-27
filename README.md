@@ -18,12 +18,3 @@
 |[spring-amqp-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-amqp-example)|rabbitmq 示例，spring-boot 版本|
 |[spring-scheduler-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)|quartz 示例，spring-boot 版本|
 |[spring-annotation-based-example](https://github.com/pleuvoir/reference-samples/tree/master/spring-annotation-based-example)|spring 基础学习|
-
-
-#### 项目结构
-
-如若在本地运行，请确保你的计算机已经安装如下环境
-
-- Maven3
-- Java8
-- [lombok](https://projectlombok.org/) 插件
