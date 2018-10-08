@@ -27,6 +27,8 @@ public class RabbitQueueCreator {
 		createBeginDelayQueueGroup();
 		// 创建普通队列
 		createNormalQueue();
+		// 创建定时队列
+		createTimeFixedQueue();
 	}
 
 	
@@ -46,6 +48,7 @@ public class RabbitQueueCreator {
 	/**
 	 * <p> 创建开始队列（该队列无消费者），到达开始时间的队列 
 	 * <p> 到达开始时间的队列 作为 开始队列 的死信队列， 当开始队列的每个消息到达过期时间未被消费时会被投递到死信队列，消费者消费死信队列即可实现延迟消费
+	 * <p> 注意：队列中的消息遵循 FIFO 原则，直到消息到达队列头部时才会被投递进入死信队列
 	 */
 	private void createBeginDelayQueueGroup(){
 
@@ -70,5 +73,17 @@ public class RabbitQueueCreator {
 		rabbitAdmin.declareBinding(bindingBeginArrival);
 	}
 	
+	
+	/**
+	 * 创建定时队列，该定时队列用来消费多个临时队列
+	 */
+	private void createTimeFixedQueue() {
+		Exchange exchangeFixedTime = ExchangeBuilder.directExchange(RabbitConst.FixedTime.EXCHANGE).durable(true).build();
+		Queue 	queueFixedTime 	= QueueBuilder.durable(RabbitConst.FixedTime.QUEUE).build();
+		Binding bindingFixedTime 	= BindingBuilder.bind(queueFixedTime).to(exchangeFixedTime).with(RabbitConst.FixedTime.ROUTING_KEY).noargs();
+		rabbitAdmin.declareExchange(exchangeFixedTime);
+		rabbitAdmin.declareQueue(queueFixedTime);
+		rabbitAdmin.declareBinding(bindingFixedTime);
+	}
 
 }

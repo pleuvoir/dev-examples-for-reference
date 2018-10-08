@@ -1,0 +1,39 @@
+package io.github.pleuvoir.producer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import io.github.pleuvoir.creator.FixedTimeQueue;
+import io.github.pleuvoir.kit.RabbitConst;
+import io.github.pleuvoir.model.FixedTimeMessage;
+
+@Component
+public class FixedTimeMessageProducer {
+	
+	private static Logger logger = LoggerFactory.getLogger(FixedTimeMessageProducer.class);
+
+	@Autowired
+	private RabbitTemplate rabbitTemplate;
+
+	
+	public void send(FixedTimeMessage msg){
+
+		logger.info("【定时消息生产者】准备发送消息，payload：{}", msg.toJSON());
+
+		FixedTimeQueue fixedTimeQueue = FixedTimeQueue.create(msg.getExcutetime())
+				.deadLetterExchange(RabbitConst.FixedTime.EXCHANGE)
+				.deadLetterRoutingKey(RabbitConst.FixedTime.ROUTING_KEY)
+				.requestId(msg.getId())
+				.build();
+		
+		if (fixedTimeQueue.isAlive()) {
+			rabbitTemplate.convertAndSend(fixedTimeQueue.getExchange(), fixedTimeQueue.getRoutingKey(), msg.toJSON());
+		}
+		
+	}
+	
+
+}

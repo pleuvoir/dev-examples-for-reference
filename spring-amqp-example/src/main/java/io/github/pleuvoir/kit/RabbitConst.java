@@ -32,4 +32,16 @@ public class RabbitConst {
 		public static final String ROUTING_KEY 	= "r.normal";
 	}
 	
+	/**
+	 * 定时队列 （死信队列）
+	 */
+	public static class FixedTime {
+
+		public static final String EXCHANGE 	= "x.fixedTime";
+
+		public static final String QUEUE 		= "q.fixedTime";
+
+		public static final String ROUTING_KEY 	= "r.fixedTime";
+	}
+	
 }
