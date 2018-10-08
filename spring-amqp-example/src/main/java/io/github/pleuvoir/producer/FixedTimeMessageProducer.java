@@ -23,16 +23,22 @@ public class FixedTimeMessageProducer {
 
 		logger.info("【定时消息生产者】准备发送消息，payload：{}", msg.toJSON());
 
-		FixedTimeQueue fixedTimeQueue = FixedTimeQueue.create(msg.getExcutetime())
+//		FixedTimeQueue fixedTimeQueue = FixedTimeQueue.create(msg.getExcutetime())
+//				.deadLetterExchange(RabbitConst.FixedTime.EXCHANGE)
+//				.deadLetterRoutingKey(RabbitConst.FixedTime.ROUTING_KEY)
+//				.requestId(msg.getId())
+//				.commit();
+//		
+//		if (fixedTimeQueue.isAlive()) {
+//			rabbitTemplate.convertAndSend(fixedTimeQueue.getExchange(), fixedTimeQueue.getRoutingKey(), msg.toJSON());
+//		}
+		
+		 FixedTimeQueue.create(msg.getExcutetime())
 				.deadLetterExchange(RabbitConst.FixedTime.EXCHANGE)
 				.deadLetterRoutingKey(RabbitConst.FixedTime.ROUTING_KEY)
 				.requestId(msg.getId())
-				.build();
-		
-		if (fixedTimeQueue.isAlive()) {
-			rabbitTemplate.convertAndSend(fixedTimeQueue.getExchange(), fixedTimeQueue.getRoutingKey(), msg.toJSON());
-		}
-		
+				.commit()
+				.sendMessageIfAlive(msg);
 	}
 	
 
