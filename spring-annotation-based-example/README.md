@@ -71,6 +71,10 @@
 	`@PropertySource` 
 	
 	`@Value`
+	
+* chapter8
+	
+	演示 event 事件机制
 
 
 
