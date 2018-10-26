@@ -1,4 +1,4 @@
-package io.github.pleuvoir.chapter7.conf;
+package io.github.pleuvoir.chapter7.wrap;
 
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
