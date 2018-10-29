@@ -10,7 +10,7 @@ import io.github.pleuvoir.chapter4.service.InitService3;
 public class CustomBeanProcessor implements BeanPostProcessor {
 
 	/**
-	 * 该方法会在 init-method 之前调用 <br>
+	 * 该方法会在 init-method 之后调用 <br>
 	 * 可以在此处对某些 bean 做增强处理
 	 */
 	@Override
@@ -24,7 +24,7 @@ public class CustomBeanProcessor implements BeanPostProcessor {
 	}
 
 	/**
-	 * 该方法会在 init-method 之后调用
+	 * 该方法会在 init-method 之前调用
 	 */
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
