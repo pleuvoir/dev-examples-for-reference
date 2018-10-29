@@ -3,10 +3,8 @@
 ## 该项目演示了 spring 基础，分为以下章节
 
 
-* chapter1
+#### chapter1 基础注解
 
-	基础注解
-	
 	`@Configuration` 
 	
 	`@Bean`
@@ -17,28 +15,22 @@
 	
 	`@Conditional`
 
-* chapter2 
+#### chapter2 演示基于包扫描的注册，以及自定义的过滤规则
 
-	演示基于包扫描的注册，以及自定义的过滤规则
-	
 	`@ComponentScan` 
 	
 	`includeFilters excludeFilters @Filter` 
 
-* chapter3
+#### chapter3 演示 bean 的多种注册方式
 
-	演示 bean 的多种注册方式
-	
 	`@Bean`
 	
 	`@Import ImportBeanDefinitionRegistrar  ImportSelector class `
 	
 	`FactoryBean`
 
-* chapter4
+#### chapter4 bean 的生命周期，可对 bean 做增强处理
 
-	bean 的生命周期，可对 bean 做增强处理
-	
 	`接口 BeanPostProcessor`
 	
 	`接口 InitializingBean, DisposableBean`
@@ -48,33 +40,26 @@
 	`@PostConstruct`
 	
 	`@PreDestroy`
+ 
+#### chapter5 演示 IOC bean 的注入，通过 set 方法，构造方法，以及属性
 
-* chapter5
-
-	演示 IOC bean 的注入，通过 set 方法，构造方法，以及属性
-	
 	`@Autowired(required = false)`
 	
 	`@Primary`
 	
 	`@Qualifier`
 
-* chapter6
+#### chapter6 演示基于 aspectj 的 aop，五种切入时机
 
-	演示基于 aspectj 的 aop，五种切入时机
+#### chapter7 演示配置文件读取的多种方式
 
-
-* chapter7
-
-	演示配置文件读取以及 `Environment` 包装类实现
-	
 	`@PropertySource` 
 	
 	`@Value`
 	
-* chapter8
+#### chapter8 演示 event 事件机制
 	
-	演示 event 事件机制
+	
 
 
 
