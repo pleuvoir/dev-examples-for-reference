@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import io.github.pleuvoir.chapter5.service.UnAvailableService;
 import io.github.pleuvoir.chapter5.service.UserService;
 
-@Controller
+@Controller("UserController")
 public class UserController {
 	
 	@Autowired 
