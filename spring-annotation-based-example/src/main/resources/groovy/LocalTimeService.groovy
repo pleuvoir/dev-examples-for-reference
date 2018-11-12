@@ -4,7 +4,7 @@ class LocalTimeService implements TimeService {
 
 	@Override
 	public String now() {
-		return "冯瑞weklgrjwjlfehqwhuhfuhfuioeh3wiofgeoltgfyhw3oitg4ypewkgjrio 垃圾";
+		return "unpark ...";
 	}
 
 }
