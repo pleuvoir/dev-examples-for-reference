@@ -1,4 +1,4 @@
-package io.github.pleuvoir.chapter8;
+package io.github.pleuvoir.chapter8.custom;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.PayloadApplicationEvent;

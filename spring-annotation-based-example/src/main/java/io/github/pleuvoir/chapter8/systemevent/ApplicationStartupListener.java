@@ -1,4 +1,4 @@
-package io.github.pleuvoir.chapter8;
+package io.github.pleuvoir.chapter8.systemevent;
 
 import java.util.Objects;
 
