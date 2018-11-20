@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import io.github.pleuvoir.base.Man;
 import io.github.pleuvoir.base.User;
 
-@Service
+//@Service
 public class EmailService {
 
 	/**

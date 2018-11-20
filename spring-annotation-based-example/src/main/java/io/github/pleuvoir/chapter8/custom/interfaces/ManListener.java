@@ -10,8 +10,6 @@ public class ManListener implements ApplicationListener<PayloadApplicationEvent<
 	@Override
 	public void onApplicationEvent(PayloadApplicationEvent<Man> event) {
 		System.out.println(Thread.currentThread().getName() + " interface Man 接收到事件：" + event.getPayload().getName());
-		
-		System.out.println(1/0);
 	}
 
 }
