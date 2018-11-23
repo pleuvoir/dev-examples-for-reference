@@ -3,6 +3,7 @@ package io.github.pleuvoir.chapter7.location;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
@@ -30,6 +31,10 @@ public class DefaultAppInfoService implements AppInfoService {
 		Assert.hasText(location, "location must non-null");
 		Resource resource = resolver.getResource(location);
 		Properties pro = PropertiesLoaderUtils.loadProperties(resource);
+		
+		PropertiesWrap propertiesWrap = new PropertiesWrap(PropertiesLoaderUtils.loadProperties(new DefaultResourceLoader().getResource(location)));
+		System.out.println(propertiesWrap.getInteger("example.version"));
+		
 		PropertiesWrap proWrap = new PropertiesWrap(pro);
 		System.out.println("proWrap show ========== " + proWrap.getInteger("example.version"));
 	}

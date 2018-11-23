@@ -6,12 +6,15 @@ import org.springframework.context.annotation.ConditionContext;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 import io.github.pleuvoir.base.User;
+import io.github.pleuvoir.chapter1.conditional.RedisCondition;
 
 @Configuration  // 代表这是一个配置类，类似于以前的 spring.xml
+@PropertySource(value = {"classpath:dev.properties"})
 public class Config1 {
 
 	
@@ -57,6 +60,15 @@ public class Config1 {
 			System.out.println("当前操作系统： " + osName);
 			return osName.contains("Windows");	// true 即创建
 		}
+	}
+	
+	
+	// 当配置文件redis.type=lettuce
+	@Conditional(RedisCondition.class)
+	@Bean(name = "propertyCondtion go")
+	public User propertyCondtion() {
+		System.out.println("我 propertyCondtion 只有在redis.type=lettuce下会被创建   。");
+		return new User("windows pika", 999);
 	}
 	
 }
