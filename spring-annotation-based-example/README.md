@@ -55,13 +55,14 @@ FactoryBean
 #### chapter7 演示配置文件读取的多种方式
 ```
 @PropertySource 
-
 @Value
 ```	
+
 #### chapter8 演示 event 事件机制
 
+#### chapter9 演示动态注册 bean 的三种方式
+
 #### groovy 演示基于 xml 格式，更改 groovy 文件实现热刷新
-	
 	
 
 
