@@ -18,14 +18,16 @@ public class ByImportBean {
 		this.tiger = tiger;
 	}
 
-	// 也会被初始化
+	// 只有 ImportBeanDefinitionRegistrar 这种方式， 内部 bean 才会被初始化
 	@Bean
 	public Cat cat() {
+		System.out.println("动态注入bean 内部 @Bean 被初始化 .. cat");
 		return new Cat();
 	}
 
 	@Bean
 	public Dog dog() {
+		System.out.println("动态注入bean 内部 @Bean 被初始化 .. dog");
 		return new Dog();
 	}
 

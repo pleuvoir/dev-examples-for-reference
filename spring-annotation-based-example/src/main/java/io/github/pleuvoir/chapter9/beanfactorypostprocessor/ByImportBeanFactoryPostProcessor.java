@@ -32,7 +32,6 @@ public class ByImportBeanFactoryPostProcessor implements BeanFactoryPostProcesso
 		// 这个实现类 又实现了 BeanDefinitionRegistry 接口，使得我们可以注册 beanDefinition
 
 		DefaultListableBeanFactory defaultListableBeanFactory = (DefaultListableBeanFactory) beanFactory;
-
 		
 		//BeanDefinitionBuilder definition = BeanDefinitionBuilder.genericBeanDefinition(ByImportBean.class);
 
