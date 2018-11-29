@@ -1,4 +1,4 @@
-package io.github.pleuvoir.chapter9.BeanDefinitionRegistryPostProcessor;
+package io.github.pleuvoir.chapter9.beandefinitionregistrypostprocessor;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;

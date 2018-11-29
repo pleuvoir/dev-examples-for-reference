@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 import io.github.pleuvoir.base.Tiger;
-import io.github.pleuvoir.chapter9.BeanDefinitionRegistryPostProcessor.ByImportBeanDefinitionRegistryPostProcessor;
+import io.github.pleuvoir.chapter9.beandefinitionregistrypostprocessor.ByImportBeanDefinitionRegistryPostProcessor;
 import io.github.pleuvoir.chapter9.beanfactorypostprocessor.ByImportBeanFactoryPostProcessor;
 import io.github.pleuvoir.chapter9.registrar.EnableByImportBeanDefinitionRegistrar;
 
