@@ -16,6 +16,7 @@ import org.springframework.core.type.AnnotationMetadata;
  * <ol>	使用方式：
  * 		<li>项目配置类中 <code>@Import(ByImportBeanDefinitionRegistrar.class)</code></li>
  * 		<li>或者配合注解使用  <code>@EnableByImportBeanDefinitionRegistrar</code></li>
+ *		<li>该类不会被回调</li>
  * </ol>
  * @author pleuvoir
  *
