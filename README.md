@@ -19,3 +19,4 @@
 |[spring-scheduler-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)|quartz 示例，spring-boot 版本|
 |[spring-annotation-based-example](https://github.com/pleuvoir/reference-samples/tree/master/spring-annotation-based-example)|spring 基础学习|
 |[netty-example](https://github.com/pleuvoir/reference-samples/tree/master/netty-example)|netty 学习|
+|[comet-sample](https://github.com/pleuvoir/reference-samples/tree/master/comet-sample)|服务器推送技术|
