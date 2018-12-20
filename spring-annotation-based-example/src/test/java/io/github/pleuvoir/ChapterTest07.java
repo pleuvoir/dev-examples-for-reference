@@ -15,7 +15,10 @@ public class ChapterTest07 {
 	@Test
 	public void context() throws IOException {
 		
-		AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext(Config7.class);
+		AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext();
+		app.register(Config7.class);
+		app.getEnvironment().setActiveProfiles("dev");
+		app.refresh();
 		System.out.println(app.getBean(AppConfig.class));
 		
 		EnvironmentWrapper env = app.getBean(EnvironmentWrapper.class);

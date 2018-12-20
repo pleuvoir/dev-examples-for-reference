@@ -56,6 +56,7 @@ FactoryBean
 ```
 @PropertySource 
 @Value
+EmbeddedValueResolverAware 使用
 ```	
 
 #### chapter08 演示 event 事件机制
