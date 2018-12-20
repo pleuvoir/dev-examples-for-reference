@@ -20,4 +20,4 @@
 |[spring-annotation-based-example](https://github.com/pleuvoir/reference-samples/tree/master/spring-annotation-based-example)|spring 基础学习|
 |[netty-example](https://github.com/pleuvoir/reference-samples/tree/master/netty-example)|netty 学习|
 |[comet-sample](https://github.com/pleuvoir/reference-samples/tree/master/comet-sample)|服务器推送技术|
-|[comet-sample](https://github.com/pleuvoir/reference-samples/tree/master/stomp-sample)|基于 stomp 的聊天室|
+|[stomp-sample](https://github.com/pleuvoir/reference-samples/tree/master/stomp-sample)|基于 stomp 的聊天室|
