@@ -47,3 +47,5 @@ spring-annotation-based-example/.classpath
 spring-annotation-based-example/.project
 spring-annotation-based-example/.settings/
 comet-sample/.classpath
+stomp-sample/.classpath
+stomp-sample/.springBeans
