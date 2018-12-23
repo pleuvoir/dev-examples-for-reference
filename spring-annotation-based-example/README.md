@@ -57,6 +57,7 @@ FactoryBean
 @PropertySource 
 @Value
 EmbeddedValueResolverAware 使用
+PropertiesFactoryBean  使用（可同时加载多个文件）
 ```	
 
 #### chapter08 演示 event 事件机制

@@ -1,6 +1,10 @@
 package io.github.pleuvoir;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Properties;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -30,6 +34,18 @@ public class ChapterTest07 {
 		// 通过 location 读取
 		AppInfoService appInfoService = app.getBean(AppInfoService.class);
 		appInfoService.show();
+		
+		
+		// 通过 PropertiesFactoryBean 
+		System.out.println("===========通过 PropertiesFactoryBean==========");
+		Properties pp = app.getBean("appProperties", Properties.class);
+		
+		Iterator<Entry<Object, Object>> iterator = pp.entrySet().iterator();
+		while (iterator.hasNext()) {
+			Map.Entry<java.lang.Object, java.lang.Object> entry = (Map.Entry<java.lang.Object, java.lang.Object>) iterator
+					.next();
+			System.out.println(entry.getKey() + "==" + entry.getValue());
+		}
 		app.close();
 	
 	}
