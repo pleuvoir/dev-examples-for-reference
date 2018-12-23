@@ -70,6 +70,8 @@ PropertiesFactoryBean  使用（可同时加载多个文件）
 
 #### chapter11 演示 java 方式配置引入其他配置类时遇到的问题（待解决）
 
+#### chapter12 演示 prepareRefresh 阶段如何增加必要属性验证
+
 #### groovy 演示基于 xml 格式，更改 groovy 文件实现热刷新
 
 
