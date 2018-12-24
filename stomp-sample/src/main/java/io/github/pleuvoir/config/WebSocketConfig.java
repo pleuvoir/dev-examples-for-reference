@@ -1,6 +1,7 @@
 package io.github.pleuvoir.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
@@ -24,10 +25,21 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
+		
+		// 发送消息前缀，如 @MessageMapping("/massRequest") 请求时则为  /live/massRequest
+		registry.setApplicationDestinationPrefixes("/live");
+		
 		/*
-		 * 配置一个消息代理 topic 负责群聊  queue 单聊
+		 * 1. 配置一个基于内存的消息代理 topic 负责群聊  queue 单聊
 		 */
-		registry.enableSimpleBroker("/topic", "/queue");
+	//	registry.enableSimpleBroker("/topic", "/queue");
+		
+		
+		// 2. 使用 RabbitMQ 做为消息代理，替换默认的 Simple Broker
+		// 在 RabbitMQ中合法的目的前缀： /temp-queue, /exchange, /topic, /queue, /amq/queue, /reply-queue/
+		 registry.enableStompBrokerRelay("/topic", "/queue")
+			.setRelayHost("127.0.0.1")
+			.setRelayPort(61613);
 
 		// 一对一的用户，请求发到/queue  即 convertAndSendToUser 方法会在回传给前端消息地址前追加此前缀
 		registry.setUserDestinationPrefix("/queue");

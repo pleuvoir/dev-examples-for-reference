@@ -19,7 +19,7 @@ public class StompController {
 	@MessageMapping("/massRequest")
 	@SendTo("/topic/getResponse")
 	// SendTo 发送至 Broker 下的指定订阅路径topic , 所以这个开头一定要是注册过的 否则无法代理使用 registry.enableSimpleBroker("/topic", "/queue");
-	// Broker再根据getResponse发送消息到订阅了/mass/getResponse的用户处
+	// Broker再根据getResponse发送消息到订阅了/topic/getResponse的用户处
 	public ChatRoomResponse mass(ChatRoomRequest chatRoomRequest) {
 		System.out.println("name =" + chatRoomRequest.getName() + " chatValue =" + chatRoomRequest.getChatValue());
 		ChatRoomResponse response = new ChatRoomResponse();
