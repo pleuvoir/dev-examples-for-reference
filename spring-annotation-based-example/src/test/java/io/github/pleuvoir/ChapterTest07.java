@@ -40,12 +40,10 @@ public class ChapterTest07 {
 		System.out.println("===========通过 PropertiesFactoryBean==========");
 		Properties pp = app.getBean("appProperties", Properties.class);
 		
-		Iterator<Entry<Object, Object>> iterator = pp.entrySet().iterator();
-		while (iterator.hasNext()) {
-			Map.Entry<java.lang.Object, java.lang.Object> entry = (Map.Entry<java.lang.Object, java.lang.Object>) iterator
-					.next();
-			System.out.println(entry.getKey() + "==" + entry.getValue());
-		}
+		pp.entrySet().forEach(k -> {
+			System.err.println(k);
+		});
+		
 		app.close();
 	
 	}
