@@ -35,7 +35,6 @@ function disconnect(){
 
 //一对多，发起订阅
 function stompTopic(){
-	console.info("订阅：/topic/getResponse");
     //通过stompClient.subscribe订阅目标(destination)发送的消息（广播接收信息）
     stompClient.subscribe('/topic/getResponse',function(response){
         var message=JSON.parse(response.body);
@@ -65,9 +64,10 @@ function stompTopic(){
 //一对一，发起订阅
 function stompQueue(){
     var userId=$("#selectName").val();
-    console.info("订阅: /queue/" + userId + "/alone");
     //通过stompClient.subscribe订阅目标(destination)发送的消息（队列接收信息）
-    stompClient.subscribe('/queue/' + userId + '/alone',
+    // 如果是 内存代理，则可以带上 userId 之类的标识  ，如果是 rabbitmq 则暂时不能（未找到方案）
+    ///  user/{username}/queue/position-updates
+	stompClient.subscribe('/user/topic/alone',
         function(response){
         var message=JSON.parse(response.body);
         //展示一对一的接收的内容接收
@@ -118,6 +118,7 @@ function sendMassMessage(){
 
 //单独发消息
 function sendAloneMessage(){
+	
   var postValue={};
   var chatValue=$("#sendChatValue2");
   var userName=$("#selectName").val();
@@ -138,7 +139,13 @@ function sendAloneMessage(){
       alert("不能发送空消息！");
       return;
   }
-  stompClient.send("/live/aloneRequest",{},JSON.stringify(postValue));
+  
+   var headers={
+       username:'admin',
+       password:'admin'
+   };
+  
+  stompClient.send("/live/aloneRequest",{headers},JSON.stringify(postValue));
   response.append("<div class='user-group'>" +
       "          <div class='user-msg'>" +
       "                <span class='user-reply'>"+chatValue.val()+"</span>" +

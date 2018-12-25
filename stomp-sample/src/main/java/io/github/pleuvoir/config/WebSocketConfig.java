@@ -37,12 +37,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 		
 		// 2. 使用 RabbitMQ 做为消息代理，替换默认的 Simple Broker
 		// 在 RabbitMQ中合法的目的前缀： /temp-queue, /exchange, /topic, /queue, /amq/queue, /reply-queue/
-		 registry.enableStompBrokerRelay("/topic", "/queue")
+		 registry.enableStompBrokerRelay("/topic")
 			.setRelayHost("127.0.0.1")
-			.setRelayPort(61613);
+			.setRelayPort(61613)
+			.setSystemHeartbeatReceiveInterval(100000L)
+			.setSystemHeartbeatSendInterval(100000L);
 
-		// 一对一的用户，请求发到/queue  即 convertAndSendToUser 方法会在回传给前端消息地址前追加此前缀
-		registry.setUserDestinationPrefix("/queue");
+		// 一对一的用户，  即 convertAndSendToUser 方法会在回传给前端消息地址前追加此前缀
+		registry.setUserDestinationPrefix("/user");
 	}
 
 }
