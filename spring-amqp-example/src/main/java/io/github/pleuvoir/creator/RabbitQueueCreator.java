@@ -23,12 +23,22 @@ public class RabbitQueueCreator {
 
 	@PostConstruct
 	public void init(){
+		
+		/**
+		 * Direct
+		 */
 		// 创建延迟队列
 		createBeginDelayQueueGroup();
 		// 创建普通队列
 		createNormalQueue();
 		// 创建定时队列
 		createTimeFixedQueue();
+		
+		
+		/**
+		 * Topic 通过使用 * 和 #，使来自不同源头的消息到达同一个队列，.将路由键分为了几个标识符，* 匹配 1 个，# 匹配一个或多个。
+		 */
+		initTopicQueue();
 	}
 
 	
@@ -86,4 +96,27 @@ public class RabbitQueueCreator {
 		rabbitAdmin.declareBinding(bindingFixedTime);
 	}
 
+	
+	
+	private void initTopicQueue() {
+
+		// 使用同一个交换机
+		Exchange topicExchange = ExchangeBuilder.topicExchange("x.log").durable(true).build();
+		rabbitAdmin.declareExchange(topicExchange);
+
+		// 这些队列应当在 live 和  wechat 两个项目中分别创建，演示用
+		Queue liveInfo = QueueBuilder.durable("q.info.live").build();
+		Queue liveError = QueueBuilder.durable("q.error.live").build();
+		rabbitAdmin.declareQueue(liveInfo);
+		rabbitAdmin.declareQueue(liveError);
+		
+		Queue wechatInfo = QueueBuilder.durable("q.info.wechat").build();
+		Queue wechatError = QueueBuilder.durable("q.error.wechat").build();
+		rabbitAdmin.declareQueue(wechatInfo);
+		rabbitAdmin.declareQueue(wechatError);
+
+		//rabbitAdmin.declareBinding(BindingBuilder.bind(info).to(topicExchange).with(routingKey).noargs());
+		//rabbitAdmin.declareBinding(BindingBuilder.bind(warn).to(topicExchange).with(routingKey).noargs());
+	}
+	
 }

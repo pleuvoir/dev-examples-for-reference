@@ -18,6 +18,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -29,6 +30,7 @@ import io.github.pleuvoir.kit.ToJSON;
  *
  */
 @Component
+@Scope("prototype")
 public class FixedTimeQueue implements ApplicationContextAware {
 
 	private static Logger logger = LoggerFactory.getLogger(FixedTimeQueue.class);
