@@ -51,3 +51,6 @@ stomp-sample/.classpath
 stomp-sample/.springBeans
 stomp-sample/.project
 *.prefs
+spring-shell-sample/.classpath
+spring-shell-sample/.gitignore
+*.project
