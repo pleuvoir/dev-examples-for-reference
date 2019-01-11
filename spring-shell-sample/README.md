@@ -1,6 +1,8 @@
 ```java
+
 # 帮助
 shell:>help
+
 AVAILABLE COMMANDS
 Built-In Commands
         clear: Clear the shell screen.
@@ -17,7 +19,7 @@ Built-In Commands
         upload: 文件上传
         
 # 查看命令具体帮助     
-hell:>help option
+shell:>help option
 
 NAME
 	option - 部署工作流
