@@ -30,3 +30,10 @@
 ## 示例
 
 该项目基于 springboot 提供了延迟队列、普通队列、定时队列生产者及消费者示例
+
+
+## Depreated
+
+该项目不再维护，后续参考 [消息中间件的一点经验](https://github.com/pleuvoir/mq-research)
+
+此外可参考[安装教程英文版](https://codenotfound.com/rabbitmq-download-install-windows.html)
