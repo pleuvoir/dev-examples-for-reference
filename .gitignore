@@ -54,3 +54,4 @@ stomp-sample/.project
 spring-shell-sample/.classpath
 spring-shell-sample/.gitignore
 *.project
+springboot2-redis-example/.classpath
