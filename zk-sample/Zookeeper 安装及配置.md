@@ -27,14 +27,16 @@ dataLogDir=D:/01 dev/log
 
 ### 目录结构
 
-bin              存放系统脚本
-conf            存放配置文件
+```
+bin            存放系统脚本
+conf           存放配置文件
 contrib        zk附加功能支持
-dist-maven  maven仓库文件
-docs            zk文档
-lib               依赖的第三方库
+dist-maven     maven仓库文件
+docs           zk文档
+lib            依赖的第三方库
 recipes        经典场景样例代码
-src              zk源码
+src            zk源码
+```
 
 其中 bin 和 conf 是非常重要的两个目录，平时也是经常使用的。
 
