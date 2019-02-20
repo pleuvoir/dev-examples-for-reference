@@ -2,7 +2,7 @@
 
 ## Zookeeper 安装
 
-ZooKeeper的安装模式分为三种，分别为：单机模式（stand-alone）、集群模式和集群伪分布模式。此处介绍 windows 下的单机模式。
+ZooKeeper的安装模式分为三种，分别为：单机模式（stand-alone）、集群模式和集群伪分布模式。
 
 ### windows 安装
 
@@ -14,7 +14,7 @@ jdk 是必须的。
 
 如解压的后的目录是 `D:\01 dev\zookeeper-3.4.13` ，建议在 `D:\01 dev` 新建 data 及 log 文件夹。
 
-上文复制 `D:\01 dev\zookeeper-3.4.13\conf\zoo_sample.cfg` 文件到当前目录下，并改名为 `zoo.cfg`。
+复制 `D:\01 dev\zookeeper-3.4.13\conf\zoo_sample.cfg` 文件到当前目录下，并改名为 `zoo.cfg`。
 
 修改 `zoo.cfg` 文件，改为如下配置：
 
@@ -107,5 +107,5 @@ conf 目录为配置文件存放的目录，zoo.cfg 为核心的配置文件
 
 
 
-
+// todo
 
