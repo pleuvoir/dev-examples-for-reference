@@ -6,7 +6,6 @@
 
 |项目|简介|
 |------:|:-------|
-|[docs](https://github.com/pleuvoir/reference-samples/tree/master/docs)|学习文档|
 |[basic-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/basic-java-example)|Java 基础|
 |[common-tookit-java](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/common-tookit-java)|Java 工具类|
 |[muti-thread-java-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/muti-thread-java-example)| Java 多线程|
@@ -23,5 +22,5 @@
 |[netty-example](https://github.com/pleuvoir/reference-samples/tree/master/netty-example)|netty 学习|
 |[comet-sample](https://github.com/pleuvoir/reference-samples/tree/master/comet-sample)|服务器推送技术|
 |[stomp-sample](https://github.com/pleuvoir/reference-samples/tree/master/stomp-sample)|基于 stomp 的聊天室|
-|[springboot2-redis-example](https://github.com/pleuvoir/reference-samples/tree/master/springboot2-redis-example)|基于 springboot2 的 redis示例|
+|[springboot2-redis-example](https://github.com/pleuvoir/reference-samples/tree/master/springboot2-redis-example)|基于 springboot2 的 redis 示例|
 |[zk-sample](https://github.com/pleuvoir/reference-samples/tree/master/zk-sample)|zk 选举，分布式锁，服务注册等|
