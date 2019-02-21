@@ -102,10 +102,8 @@ conf 目录为配置文件存放的目录，zoo.cfg 为核心的配置文件
 当节点名称带序号时，创建同样的节点会自增，如果不带序号创建同名节点会报错。也就是说，<b>对于持久节点和临时节点，同一个 Znode 下，节点名称是唯一的。<b>
 
 
-
 ### Watcher
 
+Watcher 即为 Zookeeper 发生节点变更时触发的事件，利用此机制我们可以监听变化做出操作。具体使用详见 [代码示例](https://github.com/pleuvoir/reference-samples/blob/master/zk-sample/src/main/java/io/github/pleuvoir/zk)
 
-
-// todo
 
