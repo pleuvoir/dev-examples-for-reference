@@ -42,6 +42,81 @@ cp zoo_sample.cfg zoo.cfg
 ./zkServer.sh start
 ```
 
+### Linux 集群安装
+
+1. 安装jdk运行jdk环境
+
+`上传jdk1.8安装包`
+
+2. 安装jdk1.8环境变量
+
+```
+vi /etc/profile
+
+export JAVA_HOME=/usr/local/jdk1.8.0_181
+export ZOOKEEPER_HOME=/usr/local/zookeeper
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+刷新profile文件
+
+source /etc/profile
+
+关闭防火墙
+```
+
+3. 下载zookeeper安装包
+
+`wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz`
+
+4. 解压Zookeeper安装包
+
+`tar -zxvf zookeeper-3.4.10.tar.gz`
+
+5. 修改Zookeeper文件夹名称
+ 
+`重命名： mv zookeeper-3.4.10 zookeeper`
+
+6. 修改zoo_sample.cfg文件
+
+```
+cd /usr/local/zookeeper/conf
+mv zoo_sample.cfg zoo.cfg
+修改conf: vi zoo.cfg 修改两处
+（1） dataDir=/usr/local/zookeeper/data（注意同时在zookeeper创建data目录）
+（2）最后面添加
+server.0=192.168.212.154:2888:3888
+server.1=192.168.212.156:2888:3888
+server.2=192.168.212.157:2888:3888
+```
+
+7. 创建服务器标识
+```
+服务器标识配置：
+创建文件夹： mkdir data
+创建文件myid并填写内容为0： vi
+myid (内容为服务器标识 ： 0)
+```
+
+8. 复制zookeeper
+
+```
+进行复制zookeeper目录到node1和node2
+还有/etc/profile文件
+把node1、 node2中的myid文件里的值修改为1和2
+路径(vi /usr/local/zookeeper/data/myid)
+```
+
+9. 启动zookeeper
+
+```
+启动zookeeper：
+路径： /usr/local/zookeeper/bin
+执行： zkServer.sh start
+(注意这里3台机器都要进行启动)
+状态： zkServer.sh 
+status(在三个节点上检验zk的mode,一个leader和俩个follower)
+```
+
 ### 目录结构
 
 ```
@@ -104,6 +179,11 @@ conf 目录为配置文件存放的目录，zoo.cfg 为核心的配置文件
 
 ### Watcher
 
-Watcher 即为 Zookeeper 发生节点变更时触发的事件，利用此机制我们可以监听变化做出操作。具体使用详见 [代码示例](https://github.com/pleuvoir/reference-samples/blob/master/zk-sample/src/main/java/io/github/pleuvoir/zk)
+Watcher 即为 Zookeeper 发生节点变更时触发的事件，利用此机制我们可以监听变化做出操作。具体使用详见 
+
+## 高级应用
+
+配置中心，服务注册与发现，分布式锁，选举。
 
 
+以上所有内容可参考[代码示例](https://github.com/pleuvoir/reference-samples/tree/master/zk-sample)
