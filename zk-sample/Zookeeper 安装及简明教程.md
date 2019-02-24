@@ -42,13 +42,15 @@ cp zoo_sample.cfg zoo.cfg
 ./zkServer.sh start
 ```
 
+此时安装已经完成了。
+
 ### Linux 集群安装
 
-1. 安装jdk运行jdk环境
+1）安装jdk运行jdk环境
 
 `上传jdk1.8安装包`
 
-2. 安装jdk1.8环境变量
+2）安装jdk1.8环境变量
 
 ```
 vi /etc/profile
@@ -64,19 +66,19 @@ source /etc/profile
 关闭防火墙
 ```
 
-3. 下载zookeeper安装包
+3）下载zookeeper安装包
 
 `wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz`
 
-4. 解压Zookeeper安装包
+4）解压Zookeeper安装包
 
 `tar -zxvf zookeeper-3.4.10.tar.gz`
 
-5. 修改Zookeeper文件夹名称
+5）修改Zookeeper文件夹名称
  
 `重命名： mv zookeeper-3.4.10 zookeeper`
 
-6. 修改zoo_sample.cfg文件
+6）修改zoo_sample.cfg文件
 
 ```
 cd /usr/local/zookeeper/conf
@@ -89,7 +91,7 @@ server.1=192.168.212.156:2888:3888
 server.2=192.168.212.157:2888:3888
 ```
 
-7. 创建服务器标识
+7）创建服务器标识
 ```
 服务器标识配置：
 创建文件夹： mkdir data
@@ -97,7 +99,7 @@ server.2=192.168.212.157:2888:3888
 myid (内容为服务器标识 ： 0)
 ```
 
-8. 复制zookeeper
+8）复制zookeeper
 
 ```
 进行复制zookeeper目录到node1和node2
@@ -106,7 +108,7 @@ myid (内容为服务器标识 ： 0)
 路径(vi /usr/local/zookeeper/data/myid)
 ```
 
-9. 启动zookeeper
+9）启动zookeeper
 
 ```
 启动zookeeper：
@@ -116,6 +118,8 @@ myid (内容为服务器标识 ： 0)
 状态： zkServer.sh 
 status(在三个节点上检验zk的mode,一个leader和俩个follower)
 ```
+
+此时安装已经完成了。
 
 ### 目录结构
 
@@ -184,6 +188,7 @@ Watcher 即为 Zookeeper 发生节点变更时触发的事件，利用此机制�
 ## 高级应用
 
 配置中心，服务注册与发现，分布式锁，选举。
+
 
 
 以上所有内容可参考[代码示例](https://github.com/pleuvoir/reference-samples/tree/master/zk-sample)
