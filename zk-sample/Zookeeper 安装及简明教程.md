@@ -154,6 +154,8 @@ conf 目录为配置文件存放的目录，zoo.cfg 为核心的配置文件
 ![](https://i.loli.net/2019/02/20/5c6d00db36d50.png)
 
 
+注意 MaxConnections （最大连接数）的配置。
+
 ## ZK 特性
 
 ### 数据节点
@@ -189,6 +191,12 @@ Watcher 即为 Zookeeper 发生节点变更时触发的事件，利用此机制�
 
 配置中心，服务注册与发现，分布式锁，选举。
 
+配置中心，基于 Watcher 机制，某个节点更新后修改应用对应的值。
 
+服务注册与发现使用 Watcher 机制当某节点下线时从 List 中移除，上线后则加入 List，每次请求随机取 HOST 就可以。
 
-以上所有内容可参考[代码示例](https://github.com/pleuvoir/reference-samples/tree/master/zk-sample)
+分布式锁：1）可基于同名节点、2）基于临时有序节点 来实现。
+
+选举，创建临时节点，如4台机器启动即注册节点，成功的为 Master，失败的为 Slave。当检测到某节点下线后重新抢创建该临时节点，成功的为 Master，失败的为 Slave。
+
+可参考[代码示例](https://github.com/pleuvoir/reference-samples/tree/master/zk-sample)
