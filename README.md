@@ -23,4 +23,5 @@
 |[comet-sample](https://github.com/pleuvoir/reference-samples/tree/master/comet-sample)|服务器推送技术|
 |[stomp-sample](https://github.com/pleuvoir/reference-samples/tree/master/stomp-sample)|基于 stomp 的聊天室|
 |[springboot2-redis-example](https://github.com/pleuvoir/reference-samples/tree/master/springboot2-redis-example)|基于 springboot2 的 redis 示例|
-|[zk-sample](https://github.com/pleuvoir/reference-samples/tree/master/zk-sample)|zk 选举，分布式锁，服务注册等|
+|[zk-sample](https://github.com/pleuvoir/reference-samples/tree/master/zk-sample)|zk curator 以及原生 api|
+|[jvm-sample](https://github.com/pleuvoir/reference-samples/tree/master/jvm-sample)|jvm 学习|
