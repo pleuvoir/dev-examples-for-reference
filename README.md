@@ -19,7 +19,6 @@
 |[spring-scheduler-example](https://github.com/pleuvoir/dev-samples-for-reference/tree/master/spring-scheduler-example)|quartz 示例，spring-boot 版本|
 |[spring-shell-sample](https://github.com/pleuvoir/reference-samples/blob/master/spring-shell-sample)|spring-shell 示例，spring-boot 版本|
 |[spring-annotation-based-example](https://github.com/pleuvoir/reference-samples/tree/master/spring-annotation-based-example)|spring 基础学习|
-|[netty-example](https://github.com/pleuvoir/reference-samples/tree/master/netty-example)|netty 学习|
 |[comet-sample](https://github.com/pleuvoir/reference-samples/tree/master/comet-sample)|服务器推送技术|
 |[stomp-sample](https://github.com/pleuvoir/reference-samples/tree/master/stomp-sample)|基于 stomp 的聊天室|
 |[springboot2-redis-example](https://github.com/pleuvoir/reference-samples/tree/master/springboot2-redis-example)|基于 springboot2 的 redis 示例|
