@@ -24,3 +24,4 @@
 |[springboot2-redis-example](https://github.com/pleuvoir/reference-samples/tree/master/springboot2-redis-example)|基于 springboot2 的 redis 示例|
 |[zk-sample](https://github.com/pleuvoir/reference-samples/tree/master/zk-sample)|zk curator 以及原生 api|
 |[jvm-sample](https://github.com/pleuvoir/reference-samples/tree/master/jvm-sample)|jvm 学习|
+|[springboot2-jedis-starter-example](https://github.com/pleuvoir/reference-samples/tree/master/springboot2-jedis-starter-example)|springboot2自定义starter|
