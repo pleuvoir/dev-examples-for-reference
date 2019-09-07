@@ -35,7 +35,7 @@ public class SimpleFetch implements Fetch {
 		return f;
 	}
 
-	public Object run() {
+	private Object run() {
 
 		long start = System.currentTimeMillis();
 

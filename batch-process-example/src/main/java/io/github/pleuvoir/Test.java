@@ -4,16 +4,13 @@ import io.github.pleuvoir.config.BatchConfiguration;
 import io.github.pleuvoir.config.DatasourceConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class SpringTest extends BaseTest{
-
-
-	public void test(){}
+public class Test {
 
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext();
-		app.register(BatchConfiguration.class);
 		app.register(DatasourceConfiguration.class);
-
+		app.register(BatchConfiguration.class);
+		app.refresh();
 
 		SimpleFetch fetch = app.getBean(SimpleFetch.class);
 
@@ -21,5 +18,4 @@ public class SpringTest extends BaseTest{
 
 		System.out.println(o);
 	}
-
 }

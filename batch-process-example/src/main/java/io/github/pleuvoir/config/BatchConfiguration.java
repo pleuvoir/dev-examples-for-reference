@@ -7,11 +7,22 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BatchConfiguration {
 
+
+	@Bean
+	public RedpackItemReader redpackItemReader() {
+		return new RedpackItemReader();
+	}
+
+	@Bean
+	public PaymentItemReader paymentItemReader() {
+		return new PaymentItemReader();
+	}
+
 	@Bean
 	public Step paymentItemReaderStep() {
 		return Step.create()
 				.stepName("获取订单表数据")
-				.itemReader(new PaymentItemReader())
+				.itemReader(paymentItemReader())
 				.ignoreExcpetion(true)
 				.build();
 	}
@@ -20,7 +31,7 @@ public class BatchConfiguration {
 	public Step redpackItemReadeStep() {
 		return Step.create()
 				.stepName("获取红包表数据")
-				.itemReader(new RedpackItemReader())
+				.itemReader(redpackItemReader())
 				.ignoreExcpetion(true)
 				.build();
 	}
@@ -31,82 +42,8 @@ public class BatchConfiguration {
 		simpleFetch.setName("获取对账数据");
 		simpleFetch.addStepLast(paymentItemReaderStep());
 		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(paymentItemReaderStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(paymentItemReaderStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
-		simpleFetch.addStepLast(redpackItemReadeStep());
+//		simpleFetch.addStepLast(redpackItemReadeStep());
+//		simpleFetch.addStepLast(redpackItemReadeStep());
 		return simpleFetch;
 	}
 }

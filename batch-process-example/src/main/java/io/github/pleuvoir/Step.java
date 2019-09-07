@@ -11,7 +11,7 @@ public class Step {
 
 	private String stepName;
 
-	private boolean ignoreExcpetion = false;
+	private boolean ignoreExcpetion;
 
 	private ItemReader<? extends Object> itemReader;
 
@@ -19,7 +19,6 @@ public class Step {
 		StepExecution stepExecution = new StepExecution();
 		stepExecution.setSuccess(false);
 
-		StepExecution read = null;
 		try {
 
 			Object o = itemReader.read();
