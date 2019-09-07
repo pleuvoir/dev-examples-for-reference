@@ -1,61 +1,34 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# maven ignore
+target/
 *.jar
+!.mvn/wrapper/*
 *.war
-*.nar
-*.ear
 *.zip
+*.tar
 *.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-open-source-component-wheel/oops-mvc/.classpath
-open-source-component-wheel/oops-mvc/.project
-open-source-component-wheel/oops-mvc/.springBeans
-spring-scheduler-example/.classpath
-spring-scheduler-example/.gitignore
-spring-scheduler-example/.project
-spring-scheduler-example/.settings/org.eclipse.core.resources.prefs
-spring-scheduler-example/.settings/org.eclipse.jdt.core.prefs
-spring-scheduler-example/.settings/org.eclipse.m2e.core.prefs
-basic-java-example/.classpath
-basic-java-example/.gitignore
-basic-java-example/.project
-muti-thread-java-example/.classpath
-muti-thread-java-example/.gitignore
-muti-thread-java-example/.project
+# eclipse ignore
+.settings/
+.project
+.classpath
 
-basic-java-example/.settings/org.eclipse.core.resources.prefs
-basic-java-example/.settings/org.eclipse.jdt.core.prefs
-basic-java-example/.settings/org.eclipse.m2e.core.prefs
-muti-thread-java-example/.settings/org.eclipse.core.resources.prefs
-muti-thread-java-example/.settings/org.eclipse.jdt.core.prefs
-muti-thread-java-example/.settings/org.eclipse.m2e.core.prefs
-spring-annotation-based-example/.classpath
-spring-annotation-based-example/.project
-spring-annotation-based-example/.settings/
-comet-sample/.classpath
-stomp-sample/.classpath
-stomp-sample/.springBeans
-stomp-sample/.project
-*.prefs
-spring-shell-sample/.classpath
-spring-shell-sample/.gitignore
-*.project
-springboot2-redis-example/.classpath
-zk-sample/.idea/
+# idea ignore
+.idea/
+*.ipr
 *.iml
-zk-sample/.classpath
-*.classpath
+*.iws
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+*.orig
+*.factorypath
+springbatch-sample/.mvn/
+stomp-sample/.springBeans

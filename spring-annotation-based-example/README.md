@@ -53,12 +53,14 @@ FactoryBean
 #### chapter06 演示基于 aspectj 的 aop，五种切入时机
 
 #### chapter07 演示配置文件读取的多种方式
+
 ```
 @PropertySource 
 @Value
 EmbeddedValueResolverAware 使用
 PropertiesFactoryBean  使用（可同时加载多个文件）
 ```	
+
 
 #### chapter08 演示 event 事件机制
 
@@ -73,5 +75,8 @@ PropertiesFactoryBean  使用（可同时加载多个文件）
 #### chapter12 演示 prepareRefresh 阶段如何增加必要属性验证
 
 #### groovy 演示基于 xml 格式，更改 groovy 文件实现热刷新
+
+
+### chapter13 演示启动时执行一段sql，即使报错也不影响
 
 
