@@ -1,16 +1,20 @@
 package io.github.pleuvoir;
 
-import com.google.common.collect.Lists;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.Assert;
-
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicLong;
+
+import org.springframework.util.Assert;
+
+import com.google.common.collect.Lists;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class SimpleFetch implements Fetch {
@@ -47,8 +51,13 @@ public class SimpleFetch implements Fetch {
 
 		log.info("开始执行任务<{}>，流程数={}", getName(), steps.size());
 
-
-		List<Object> result = Lists.newArrayList();
+		//如果这个会有并发的问题，list有元素会返回null，
+		
+		
+		Collection<Object> result = Collections.synchronizedCollection(Lists.newArrayList());
+		
+		//List<Object> result =  Lists.newArrayList();
+		
 		steps.parallelStream().forEach(s -> {
 			log.info("任务<{}>，流程<{}>准备执行", getName(), s.getStepName());
 

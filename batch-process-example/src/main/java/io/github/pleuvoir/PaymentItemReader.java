@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import io.github.pleuvoir.model.PaymentOrderPO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowCountCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
 
 import javax.annotation.Resource;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Slf4j
 public class PaymentItemReader implements ItemReader<List> {
@@ -26,14 +28,29 @@ public class PaymentItemReader implements ItemReader<List> {
 	@Override
 	public List read() {
 
+
+		String cnt = "select count(1) from t_payment_order_1 ";
+
+
+		Long count = master.queryForObject(cnt, Long.class);
+		log.info("共有{}条记录",count);
+
+
+		//		master.query(cnt, null,null,new RowCountCallbackHandler(){
+//			@Override
+//			protected void processRow(ResultSet rs, int rowNum) throws SQLException {
+//
+//			}
+//		});
+
 		String sql = "select * from t_payment_order_1 ";
-
-		List<PaymentOrderPO> rows = (List<PaymentOrderPO>) master
-				.queryForObject(sql, new RowMapperImpl());
-
-	//	ArrayList<PaymentOrderPO> rows = excuteSql(sql);
-
-		log.info("获取到{}条记录", rows.size());
+//
+//		List<PaymentOrderPO> rows = (List<PaymentOrderPO>) master
+//				.queryForObject(sql, new RowMapperImpl());
+//
+//	//	ArrayList<PaymentOrderPO> rows = excuteSql(sql);
+//
+//		log.info("获取到{}条记录", rows.size());
 
 		//from db
 		ArrayList<Object> result = Lists.newArrayList();
@@ -55,12 +72,15 @@ public class PaymentItemReader implements ItemReader<List> {
 
 	public static class RowMapperImpl implements RowMapper<PaymentOrderPO> {
 
+		AtomicLong a = new AtomicLong();
+
+		PaymentOrderPO po = new PaymentOrderPO();
+
 		@Override
 		public PaymentOrderPO mapRow(ResultSet rs, int rowNum) throws SQLException {
-			PaymentOrderPO po = new PaymentOrderPO();
 			po.setPayId(rs.getString("pay_id"));
-			log.info("list add ..");
-			return po;
+		//	log.info("list add .. {},{} ",a.getAndIncrement(),po);
+			return null;
 		}
 	}
 
